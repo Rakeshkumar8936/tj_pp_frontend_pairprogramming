@@ -17,7 +17,9 @@ export type PortalItem ={
 // const API_URL = "http://localhost:8080/api/portal";
 const API_URL = "https://tjppbackendpairprogramming-production.up.railway.app/api/portal";
 export async function getPortalItems():Promise<PortalItem[]>{
-    const response = await fetch(`${API_URL}/items`)
+    const response = await fetch(`${API_URL}/items`,{
+        cache:"no-store",
+    })
     if(!response.ok){
         throw new Error("Failed to fetch portal items");
     }
